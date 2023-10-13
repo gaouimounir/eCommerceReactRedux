@@ -16,11 +16,15 @@ function App() {
       <h1>Liste des produits :</h1>
       <ul>
         {products.map((product) => (
-          <li key={product.id}>{product.name}</li>
+          <li key={product.id}>
+            <img src={product.imageUrl} alt={product.title} />
+            <h2>{product.title}</h2>
+            <p>{product.description}</p>
+            <p>Prix : {product.salePrice} €</p>
+          </li>
         ))}
       </ul>
     </div>
   );
 }
-
 export default App;
