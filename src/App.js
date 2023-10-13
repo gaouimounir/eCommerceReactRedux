@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getProducts } from "./actions/product.action";
 
 function App() {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.productReducer);
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Liste des produits :</h1>
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>{product.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
