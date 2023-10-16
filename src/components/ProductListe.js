@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getProducts } from "../actions/product.action";
+import "./ProductList.css";
 
 const GetProductListe = () => {
   const dispatch = useDispatch();
@@ -13,11 +14,13 @@ const GetProductListe = () => {
     <div>
       <h1>Liste des produits :</h1>
       {products.map((product) => (
-        <div key={product.id}>
+        <div className="product-card" key={product.id}>
           <img src={product.imageUrl} alt={product.title} />
-          <h2>{product.title}</h2>
-          <p>{product.description}</p>
-          <p>Prix : {product.salePrice} €</p>
+          <div className="product-details">
+            <h2 className="product-title">{product.title}</h2>
+            <p className="product-description">{product.description}</p>
+            <p className="product-price">Prix : {product.salePrice} €</p>
+          </div>
         </div>
       ))}
     </div>
