@@ -6,14 +6,13 @@ import "./ProductListe.css";
 
 const GetProductListe = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.productReducer);
+  const products = useSelector((state) => state.productReducer.products);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
   return (
     <div className="product">
-      <h1>Liste des produits :</h1>
       {products.map((product) => (
         <div className="product-card" key={product.id}>
           <img src={product.imageUrl} alt={product.title} />

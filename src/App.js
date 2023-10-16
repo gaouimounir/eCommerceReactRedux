@@ -1,13 +1,13 @@
 import "./App.css";
 import React from "react";
-import GetProductListe from "./components/ProductListe";
+import GetProductListe from "./components/GetProductListe";
 import AddProduct from "./components/AddProduct";
 
 function App() {
   return (
     <>
-      <AddProduct />
-      <GetProductListe />;
+      <GetProductListe />
+      <AddProduct />;
     </>
   );
 }
