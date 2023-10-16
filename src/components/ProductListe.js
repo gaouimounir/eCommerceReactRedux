@@ -1,7 +1,8 @@
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getProducts } from "../actions/product.action";
-import "./ProductList.css";
+import "./ProductListe.css";
 
 const GetProductListe = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const GetProductListe = () => {
     dispatch(getProducts());
   }, [dispatch]);
   return (
-    <div>
+    <div className="product">
       <h1>Liste des produits :</h1>
       {products.map((product) => (
         <div className="product-card" key={product.id}>
