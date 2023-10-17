@@ -1,9 +1,7 @@
 import { GET_PRODUCTS } from "../actions/product.action";
 import { ADD_PRODUCT } from "../actions/product.action";
 
-const initialState = {
-  products: [],
-};
+const initialState = {};
 
 export default function productReducer(state = initialState, action) {
   switch (action.type) {

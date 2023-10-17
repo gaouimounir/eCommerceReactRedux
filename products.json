@@ -152,7 +152,13 @@
       "id": 14
     },
     {
-      "id": 15
+      "title": "chapeau",
+      "description": "mugiwara",
+      "categories": "couvre chef",
+      "basePrice": "50",
+      "salePrice": "20",
+      "imageUrl": "https://img.freepik.com/photos-gratuite/vue-cote-femme-porter-casque_23-2149727788.jpg?w=1060&t=st=1697545775~exp=1697546375~hmac=f47b5a344a50076522bdca3911acead4c9b689b801370b645f11edd2573b7a92",
+      "id": 16
     }
   ]
 }

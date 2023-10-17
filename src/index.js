@@ -6,7 +6,6 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./reducers";
 import { getProducts } from "./actions/product.action";
-import { addProduct } from "./actions/product.action";
 
 const store = configureStore({
   reducer: rootReducer,
@@ -14,7 +13,6 @@ const store = configureStore({
 });
 
 store.dispatch(getProducts());
-store.dispatch(addProduct());
 
 const root = document.getElementById("root");
 const appRoot = createRoot(root);
