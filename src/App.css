@@ -67,39 +67,4 @@ body {
   margin: 10px 0;
 }
 
-.product-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input, textarea {
-  padding: 10px;
-  width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-textarea {
-  min-height: 100px;
-}
-
-.submit-button {
-  background-color: #ff5722;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: #ff7043;
-}
+/* ProductListe.css : Aucun changement ici */
