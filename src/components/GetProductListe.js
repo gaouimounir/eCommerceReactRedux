@@ -15,8 +15,10 @@ const GetProductListe = () => {
             <img src={product.imageUrl} alt={product.title} />
             <div className="product-details">
               <h2 className="product-title">{product.title}</h2>
+              <p className="product-categorie">{product.categories}</p>
               <p className="product-description">{product.description}</p>
-              <p className="product-price">Prix : {product.salePrice} €</p>
+              <p className="product-basePrice">Prix : {product.basePrice} €</p>
+              <p className="product-salePrice">Prix : {product.salePrice} €</p>
             </div>
           </div>
         ))}
