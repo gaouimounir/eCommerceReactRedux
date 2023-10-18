@@ -147,8 +147,10 @@
     {
       "title": "Velo",
       "description": "btwin hollandais",
-      "price": "150",
+      "basePrice": "150",
+      "salePrice": "100",
       "imageUrl": "https://img.freepik.com/photos-gratuite/full-shot-femme-velo-exterieur_23-2149413735.jpg?w=1060&t=st=1697459697~exp=1697460297~hmac=ba47d5828a0276ae5148e0eff9f93e0db9d2df68c32d9a8df9ee1bae9f93e904",
+      "categorie": "Accesoire",
       "id": 14
     },
     {
