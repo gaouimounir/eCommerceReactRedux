@@ -1,20 +1,14 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getProducts } from "../actions/product.action";
+import { useSelector } from "react-redux";
 import "./ProductListe.css";
 import { isEmpty } from "./outils";
 
 const GetProductListe = () => {
-  const dispatch = useDispatch();
   const products = useSelector((state) => state.productReducer.products);
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
   return (
     <div className="product">
-      {isEmpty(products)}
+      {!isEmpty(products)}
       {products &&
         products.map((product) => (
           <div className="product-card" key={product.id}>

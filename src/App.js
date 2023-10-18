@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <GetProductListe />
-      <AddProduct />
+      <AddProduct />;
     </>
   );
 }

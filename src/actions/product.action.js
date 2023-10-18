@@ -13,15 +13,13 @@ export const getProducts = () => {
   };
 };
 
-export const addProduct = (newProduct) => {
+export const addProduct = (data) => {
   return (dispatch) => {
-    return axios
-      .post("http://localhost:3000/products", newProduct)
-      .then((res) => {
-        dispatch({
-          type: ADD_PRODUCT,
-          payload: res.data,
-        });
+    return axios.post("http://localhost:3000/products", data).then((res) => {
+      dispatch({
+        type: ADD_PRODUCT,
+        payload: res.data,
       });
+    });
   };
 };
