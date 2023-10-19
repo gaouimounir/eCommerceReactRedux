@@ -1,4 +1,3 @@
-// GetProductListe.js
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import EditProduct from "./EditProduct";
