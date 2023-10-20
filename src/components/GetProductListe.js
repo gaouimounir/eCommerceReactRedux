@@ -4,8 +4,16 @@ import EditProduct from "./EditProduct";
 import { isEmpty } from "./outils";
 import "./ProductListe.css";
 
-const GetProductListe = () => {
+const GetProductListe = ({ categoryFilter }) => {
   const products = useSelector((state) => state.productReducer.products);
+
+  const filteredProducts = categoryFilter
+    ? products.filter((product) =>
+        Array.isArray(product.categories)
+          ? products.categories.includes(categoryFilter)
+          : products.categories === categoryFilter
+      )
+    : products;
 
   const [editingProductId, setEditingProductId] = useState(null);
 
@@ -19,9 +27,9 @@ const GetProductListe = () => {
 
   return (
     <div className="product">
-      {!isEmpty(products)}
-      {products &&
-        products.map((product) => (
+      {!isEmpty(filteredProducts)}
+      {filteredProducts &&
+        filteredProducts.map((product) => (
           <div className="product-card" key={product.id}>
             {editingProductId === product.id ? (
               <EditProduct product={product} onCancel={handleCancelEdit} />

@@ -12,8 +12,9 @@ const router = createBrowserRouter([
         {" "}
         Page d'accueil
         <nav>
-          <NavLink to="/Homme">Homme</NavLink>
-          <NavLink to="/Femme">Femme</NavLink>
+          <NavLink to="/Hommes">Homme</NavLink>
+          <NavLink to="/Femmes">Femme</NavLink>
+          <NavLink to="/Enfants">Enfant</NavLink>
         </nav>
       </div>
     ),
