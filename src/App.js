@@ -23,14 +23,6 @@ const router = createBrowserRouter([
         path: "Hommes",
         element: <HommeProducts />,
       },
-      {
-        path: "Femmes",
-        element: <div>Femme</div>,
-        loader: () =>
-          fetch("http://localhost:3000/products").then((res) => {
-            return res.json(res.data);
-          }),
-      },
     ],
   },
 ]);
@@ -43,9 +35,9 @@ function Root() {
           <NavLink to="/">Page d'accueil</NavLink>
           <NavLink to="/Hommes">Hommes</NavLink>
           <NavLink to="/Femmes">Femmes</NavLink>
-          <NavLink to="/Femmes">Ados</NavLink>
-          <NavLink to="/Femmes">Enfants</NavLink>
-          <NavLink to="/Femmes">Bébés</NavLink>
+          <NavLink to="/Ados">Ados</NavLink>
+          <NavLink to="/Enfants">Enfants</NavLink>
+          <NavLink to="/Bebes">Bébés</NavLink>
         </nav>
       </header>
       <div>

@@ -16,3 +16,9 @@ export function FemmeProduct() {
     </>
   );
 }
+
+/* <div>Femme</div>,
+        loader: () =>
+          fetch("http://localhost:3000/products").then((res) => {
+            return res.json(res.data);
+          }), */
