@@ -23,6 +23,22 @@ const router = createBrowserRouter([
         path: "Hommes",
         element: <HommeProducts />,
       },
+      {
+        path: "Femmes",
+        element: <FemmeProducts />,
+      },
+      {
+        path: "Ados",
+        element: <AdosProducts />,
+      },
+      {
+        path: "Enfants",
+        element: <EnfantsProducts />,
+      },
+      {
+        path: "Bébés",
+        element: <BebesProducts />,
+      },
     ],
   },
 ]);
