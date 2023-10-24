@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useState } from "react";
 import GetProductListe from "./components/GetProductListe";
 import AddProduct from "./components/AddProduct";
 import {
@@ -28,6 +28,11 @@ const router = createBrowserRouter([
 ]);
 
 function Root() {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
   return (
     <>
       <header>
@@ -41,22 +46,46 @@ function Root() {
           </NavLink>
         </div>
         <nav>
-          <NavLink className={"linkCategory"} to="/">
+          <NavLink
+            className={"linkCategory"}
+            to="/"
+            onClick={() => handleCategoryClick("")}
+          >
             Page d'accueil
           </NavLink>
-          <NavLink className={"linkCategory"} to="/Hommes">
+          <NavLink
+            className={"linkCategory"}
+            to="/Hommes"
+            onClick={() => handleCategoryClick("Hommes")}
+          >
             Hommes
           </NavLink>
-          <NavLink className={"linkCategory"} to="/Femmes">
+          <NavLink
+            className={"linkCategory"}
+            to="/Femmes"
+            onClick={() => handleCategoryClick("Femmes")}
+          >
             Femmes
           </NavLink>
-          <NavLink className={"linkCategory"} to="/Ados">
+          <NavLink
+            className={"linkCategory"}
+            to="/Ados"
+            onClick={() => handleCategoryClick("Ados")}
+          >
             Ados
           </NavLink>
-          <NavLink className={"linkCategory"} to="/Enfants">
+          <NavLink
+            className={"linkCategory"}
+            to="/Enfants"
+            onClick={() => handleCategoryClick("Enfants")}
+          >
             Enfants
           </NavLink>
-          <NavLink className={"linkCategory"} to="/Bebes">
+          <NavLink
+            className={"linkCategory"}
+            to="/Bebes"
+            onClick={() => handleCategoryClick("Bebes")}
+          >
             Bébés
           </NavLink>
         </nav>
@@ -69,6 +98,7 @@ function Root() {
 }
 
 function App() {
+  const [categoryFilter, setCategoryFilter] = useState("");
   return (
     <>
       <RouterProvider router={router} />
