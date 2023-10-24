@@ -36,16 +36,29 @@ function Root() {
             <img
               src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.tendanceshopping.com%2Fimg%2Fheader%2Flogo.png&f=1&nofb=1&ipt=96e49ef3381d1c504609e18fc407e2e2ebdf6c111b58d11649cfec6c7d59de73&ipo=images"
               alt=""
+              style={{ width: "80%" }}
             />
           </NavLink>
         </div>
         <nav>
-          <NavLink to="/">Page d'accueil</NavLink>
-          <NavLink to="/Hommes">Hommes</NavLink>
-          <NavLink to="/Femmes">Femmes</NavLink>
-          <NavLink to="/Ados">Ados</NavLink>
-          <NavLink to="/Enfants">Enfants</NavLink>
-          <NavLink to="/Bebes">Bébés</NavLink>
+          <NavLink className={"linkCategory"} to="/">
+            Page d'accueil
+          </NavLink>
+          <NavLink className={"linkCategory"} to="/Hommes">
+            Hommes
+          </NavLink>
+          <NavLink className={"linkCategory"} to="/Femmes">
+            Femmes
+          </NavLink>
+          <NavLink className={"linkCategory"} to="/Ados">
+            Ados
+          </NavLink>
+          <NavLink className={"linkCategory"} to="/Enfants">
+            Enfants
+          </NavLink>
+          <NavLink className={"linkCategory"} to="/Bebes">
+            Bébés
+          </NavLink>
         </nav>
       </header>
       <div>

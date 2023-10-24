@@ -74,4 +74,29 @@ header{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 100%; 
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-bottom: 6%;
+}
+
+header nav{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #ff5722;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.linkCategory{
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  border: 3px solid #ff5722;
 }
