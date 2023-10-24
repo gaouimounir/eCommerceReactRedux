@@ -66,3 +66,12 @@ body {
   color: #ff5722;
   margin: 10px 0;
 }
+
+/*  ------------  */
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
