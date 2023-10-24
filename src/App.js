@@ -102,7 +102,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <GetProductListe />
+      <GetProductListe categoryFilter={categoryFilter} />
       <AddProduct />;
     </>
   );
