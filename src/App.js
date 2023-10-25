@@ -117,7 +117,7 @@ function Root() {
 }
 
 function App() {
-  const [categoryFilter, setCategoryFilter] = useState("");
+  const [categoryFilter] = useState("");
 
   return (
     <>
