@@ -8,7 +8,7 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import { HommeProducts } from "./components/HommeCategory";
+import { ArticleFiltrer } from "./components/FiltreCategory";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +20,8 @@ const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "Hommes",
-        element: <HommeProducts />,
+        path: ":category",
+        element: <ArticleFiltrer />,
       },
     ],
   },

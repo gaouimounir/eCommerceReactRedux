@@ -1,17 +1,21 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom"; // Importez useParams
 import { useSelector } from "react-redux";
 import EditProduct from "./EditProduct";
 import { isEmpty } from "./outils";
 import "./ProductListe.css";
 
-const GetProductListe = ({ categoryFilter }) => {
+const GetProductListe = () => {
+  const { categoryFilter } = useParams(); // Extrait le paramètre "category" de l'URL
+
   const products = useSelector((state) => state.productReducer.products);
 
+  // Utilisez le paramètre "category" pour filtrer les produits
   const filteredProducts = categoryFilter
     ? products.filter((product) =>
         Array.isArray(product.categories)
-          ? products.categories.includes(categoryFilter)
-          : products.categories === categoryFilter
+          ? product.categories.includes(categoryFilter)
+          : product.categories === categoryFilter
       )
     : products;
 
