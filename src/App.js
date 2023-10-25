@@ -9,6 +9,8 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import { ArticleFiltrer } from "./components/FiltreCategory";
+import { useDispatch } from "react-redux";
+import { setFilter } from "./actions/filter.action";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,7 @@ const router = createBrowserRouter([
 ]);
 
 function Root() {
+  const dispatch = useDispatch();
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleCategoryClick = (category) => {
@@ -37,54 +40,70 @@ function Root() {
     <>
       <header>
         <div>
-          <NavLink>
-            <img
-              src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.tendanceshopping.com%2Fimg%2Fheader%2Flogo.png&f=1&nofb=1&ipt=96e49ef3381d1c504609e18fc407e2e2ebdf6c111b58d11649cfec6c7d59de73&ipo=images"
-              alt=""
-              style={{ width: "80%" }}
-            />
-          </NavLink>
+          <img
+            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.tendanceshopping.com%2Fimg%2Fheader%2Flogo.png&f=1&nofb=1&ipt=96e49ef3381d1c504609e18fc407e2e2ebdf6c111b58d11649cfec6c7d59de73&ipo=images"
+            alt=""
+            style={{ width: "80%" }}
+          />
         </div>
         <nav>
           <NavLink
             className={"linkCategory"}
             to="/"
-            onClick={() => handleCategoryClick("")}
+            onClick={() => {
+              handleCategoryClick("allArticles");
+              dispatch(setFilter("allArticles"));
+            }}
           >
             Page d'accueil
           </NavLink>
           <NavLink
             className={"linkCategory"}
             to="/Hommes"
-            onClick={() => handleCategoryClick("Hommes")}
+            onClick={() => {
+              handleCategoryClick("Hommes");
+              dispatch(setFilter("Hommes"));
+            }}
           >
             Hommes
           </NavLink>
           <NavLink
             className={"linkCategory"}
             to="/Femmes"
-            onClick={() => handleCategoryClick("Femmes")}
+            onClick={() => {
+              handleCategoryClick("Femmes");
+              dispatch(setFilter("Femmes"));
+            }}
           >
             Femmes
           </NavLink>
           <NavLink
             className={"linkCategory"}
             to="/Ados"
-            onClick={() => handleCategoryClick("Ados")}
+            onClick={() => {
+              handleCategoryClick("Ados");
+              dispatch(setFilter("Ados"));
+            }}
           >
             Ados
           </NavLink>
           <NavLink
             className={"linkCategory"}
             to="/Enfants"
-            onClick={() => handleCategoryClick("Enfants")}
+            onClick={() => {
+              handleCategoryClick("Enfants");
+              dispatch(setFilter("Enfants"));
+            }}
           >
             Enfants
           </NavLink>
           <NavLink
             className={"linkCategory"}
-            to="/Bebes"
-            onClick={() => handleCategoryClick("Bebes")}
+            to="/Bébés"
+            onClick={() => {
+              handleCategoryClick("Bébés");
+              dispatch(setFilter("Bébés"));
+            }}
           >
             Bébés
           </NavLink>
@@ -99,6 +118,7 @@ function Root() {
 
 function App() {
   const [categoryFilter, setCategoryFilter] = useState("");
+
   return (
     <>
       <RouterProvider router={router} />

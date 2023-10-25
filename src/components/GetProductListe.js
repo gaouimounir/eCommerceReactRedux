@@ -6,18 +6,19 @@ import { isEmpty } from "./outils";
 import "./ProductListe.css";
 
 const GetProductListe = () => {
-  const { categoryFilter } = useParams(); // Extrait le paramètre "category" de l'URL
+  /*   const { categoryFilter } = useParams(); // Extrait le paramètre "category" de l'URL
+   */
 
+  const categoryFilter = useSelector((state) => state.filterReducer);
   const products = useSelector((state) => state.productReducer.products);
+  console.log(categoryFilter);
 
   // Utilisez le paramètre "category" pour filtrer les produits
-  const filteredProducts = categoryFilter
-    ? products.filter((product) =>
-        Array.isArray(product.categories)
-          ? product.categories.includes(categoryFilter)
-          : product.categories === categoryFilter
-      )
-    : products;
+  const filteredProducts =
+    categoryFilter !== "allArticles"
+      ? products.filter((product) => product.categories === categoryFilter)
+      : products;
+  console.log(filteredProducts);
 
   const [editingProductId, setEditingProductId] = useState(null);
 
