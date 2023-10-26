@@ -5,7 +5,7 @@ export function ArticleFiltrer() {
 
   return (
     <div>
-      <h1>Catégorie : {category}</h1>
+      <h1>{category}</h1>
     </div>
   );
 }
